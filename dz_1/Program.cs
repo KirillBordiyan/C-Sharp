@@ -29,6 +29,27 @@ task2();
 // 44 5 78 -> 78
 // 22 3 9 -> 22
 
+int task4(){
+    
+    System.Console.WriteLine("Введите первое число: ");
+    int a = int.Parse(Console.ReadLine());
+
+    System.Console.WriteLine("Введите второе число: ");
+    int b = int.Parse(Console.ReadLine());
+
+    System.Console.WriteLine("Введите третье число: ");
+    int c = int.Parse(Console.ReadLine());
+    int max = a;
+
+    if (b > max) max = b;
+    if (c > max) max = c;
+    
+    System.Console.WriteLine($"{max} максимальное");
+    return max;
+}
+
+task4();
+
 // Задача 6: Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
 // 4 -> да
 // -3 -> нет
