@@ -3,16 +3,16 @@
 // 782 -> 8
 // 918 -> 1
 
-// int task10() {
-//     System.Console.Write("введите трехзначное число: ");
-//     int a = int.Parse(System.Console.ReadLine());
-//     int num1 = a % 100;
-//     int num2 = num1 / 10;
-//     System.Console.WriteLine($"{num2}");
-//     return num2;
-// }
+int task10() {
+    System.Console.Write("введите трехзначное число: ");
+    int a = int.Parse(System.Console.ReadLine());
+    int num1 = a % 100;
+    int num2 = num1 / 10;
+    System.Console.WriteLine($"{num2}");
+    return num2;
+}
 
-// task10();
+task10();
 
 
 // Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
@@ -20,26 +20,26 @@
 // 78 -> третьей цифры нет
 // 32679 -> 6
 
-// void task13(){
-//     System.Console.Write("введите число: ");
-//     int b = 0;
-//     while (! int.TryParse(System.Console.ReadLine(), out b)){
-//     System.Console.WriteLine("это не число");
-//     }
+void task13(){
+    System.Console.Write("введите число: ");
+    int b = 0;
+    while (! int.TryParse(System.Console.ReadLine(), out b)){
+    System.Console.WriteLine("это не число");
+    }
 
-//     int ost = 0;
-//     if (b >= 100){
-//         do{
-//             ost = b % 10;
-//             b = b / 10;
-//         }
-//         while(b >= 100);
-//         System.Console.WriteLine(ost);
-//     }
-//     else{
-//         System.Console.WriteLine("число меньше трехзначного");
-//     }
-// }
+    int ost = 0;
+    if (b >= 100){
+        do{
+            ost = b % 10;
+            b = b / 10;
+        }
+        while(b >= 100);
+        System.Console.WriteLine(ost);
+    }
+    else{
+        System.Console.WriteLine("число меньше трехзначного");
+    }
+}
 
 // task13();
 
@@ -49,24 +49,24 @@
 // 7 -> да
 // 1 -> нет
 
-// void task15(){
-//     System.Console.WriteLine("введите число от 1 до 7: ");
-//     int day = 0;
-//     while ((! int.TryParse(System.Console.ReadLine(), out day) || (day > 7 || day < 1))){
-//         System.Console.WriteLine("это число не подходит, введите другое: ");
-//     };
+void task15(){
+    System.Console.WriteLine("введите число от 1 до 7: ");
+    int day = 0;
+    while ((! int.TryParse(System.Console.ReadLine(), out day) || (day > 7 || day < 1))){
+        System.Console.WriteLine("это число не подходит, введите другое: ");
+    };
  
-//     switch(day){
-//         case int i when (i >= 1 && i <=5):
-//             System.Console.WriteLine("нет");
-//             break;
-//         case int i when (i == 6  || i == 7):
-//             System.Console.WriteLine("да");
-//             break;
-//     }
-// }
+    switch(day){
+        case int i when (i >= 1 && i <=5):
+            System.Console.WriteLine("нет");
+            break;
+        case int i when (i == 6  || i == 7):
+            System.Console.WriteLine("да");
+            break;
+    }
+}
 
-// task15();
+task15();
 
 // f(x) = kx+g - формула прямой 
 // коэф прямой
