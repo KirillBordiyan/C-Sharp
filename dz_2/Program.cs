@@ -41,4 +41,29 @@ void task13(){
     }
 }
 
-task13();
+// task13();
+
+
+// Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+// 6 -> да
+// 7 -> да
+// 1 -> нет
+
+void task15(){
+    System.Console.WriteLine("введите число от 1 до 7: ");
+    int day = 0;
+    while ((! int.TryParse(System.Console.ReadLine(), out day) || (day > 7 || day < 1))){
+        System.Console.WriteLine("это число не подходит, введите другое: ");
+    };
+ 
+    switch(day){
+        case int i when (i >= 1 && i <=5):
+            System.Console.WriteLine("нет");
+            break;
+        case int i when (i == 6  || i == 7):
+            System.Console.WriteLine("да");
+            break;
+    }
+}
+
+task15();
