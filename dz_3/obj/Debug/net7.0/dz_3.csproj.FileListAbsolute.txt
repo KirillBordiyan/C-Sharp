@@ -1,0 +1,15 @@
+E:\repositories\csharp_dz\dz_3\obj\Debug\net7.0\dz_3.csproj.AssemblyReference.cache
+E:\repositories\csharp_dz\dz_3\obj\Debug\net7.0\dz_3.GeneratedMSBuildEditorConfig.editorconfig
+E:\repositories\csharp_dz\dz_3\obj\Debug\net7.0\dz_3.AssemblyInfoInputs.cache
+E:\repositories\csharp_dz\dz_3\obj\Debug\net7.0\dz_3.AssemblyInfo.cs
+E:\repositories\csharp_dz\dz_3\obj\Debug\net7.0\dz_3.csproj.CoreCompileInputs.cache
+E:\repositories\csharp_dz\dz_3\bin\Debug\net7.0\dz_3.exe
+E:\repositories\csharp_dz\dz_3\bin\Debug\net7.0\dz_3.deps.json
+E:\repositories\csharp_dz\dz_3\bin\Debug\net7.0\dz_3.runtimeconfig.json
+E:\repositories\csharp_dz\dz_3\bin\Debug\net7.0\dz_3.dll
+E:\repositories\csharp_dz\dz_3\bin\Debug\net7.0\dz_3.pdb
+E:\repositories\csharp_dz\dz_3\obj\Debug\net7.0\dz_3.dll
+E:\repositories\csharp_dz\dz_3\obj\Debug\net7.0\refint\dz_3.dll
+E:\repositories\csharp_dz\dz_3\obj\Debug\net7.0\dz_3.pdb
+E:\repositories\csharp_dz\dz_3\obj\Debug\net7.0\dz_3.genruntimeconfig.cache
+E:\repositories\csharp_dz\dz_3\obj\Debug\net7.0\ref\dz_3.dll
