@@ -42,13 +42,22 @@ if (QantOfNum(number)){
 }
 */
 
+
+
+
+
+
+
+
+
+
 /*
 Задача 21
 Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
 A (3,6,8); B (2,1,-7), -> 15.84
 A (7,-5, 0); B (1,-1,9) -> 11.53
 */
-
+/*
 int ReadCordinat(string arg){ 
     System.Console.WriteLine($"координата {arg}: ");
 
@@ -69,4 +78,43 @@ double DistanceOf((int x, int y, int z) A, (int x, int y, int z) B){
 }
 
 DistanceOf(A, B);
+*/
 
+
+/*Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+3 -> 1, 8, 27
+5 -> 1, 8, 27, 64, 125
+*/
+
+
+
+int number = ReadInt("N: ");
+
+int ReadInt(string arg){
+
+    System.Console.WriteLine("ввести число: ");
+    int i;
+    while(!int.TryParse(System.Console.ReadLine(), out i))
+    {
+        System.Console.WriteLine("ввести другое: ");
+    }
+    return i;
+}
+
+int[] CubeArray(int num){
+
+    int[] array = new int[num];
+    for (int i = 0; i < num; i++)
+    {
+        array[i] = (int) Math.Pow(i+1, 3);
+    }
+   
+
+    foreach (var item in array)
+    {
+        System.Console.WriteLine(item);
+    }
+    return array;
+}
+
+CubeArray(number);
