@@ -3,7 +3,7 @@
 // 14212 -> нет
 // 12821 -> да
 // 23432 -> да
-/*
+
 int number = ReadNumber();
 
 int ReadNumber()
@@ -40,7 +40,7 @@ if (QantOfNum(number)){
 }else{
     System.Console.WriteLine("not");
 }
-*/
+
 
 
 
@@ -57,7 +57,7 @@ if (QantOfNum(number)){
 A (3,6,8); B (2,1,-7), -> 15.84
 A (7,-5, 0); B (1,-1,9) -> 11.53
 */
-/*
+
 int ReadCordinat(string arg){ 
     System.Console.WriteLine($"координата {arg}: ");
 
@@ -78,7 +78,7 @@ double DistanceOf((int x, int y, int z) A, (int x, int y, int z) B){
 }
 
 DistanceOf(A, B);
-*/
+
 
 
 /*Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
@@ -88,7 +88,7 @@ DistanceOf(A, B);
 
 
 
-int number = ReadInt("N: ");
+int numberN = ReadInt("N: ");
 
 int ReadInt(string arg){
 
@@ -117,4 +117,4 @@ int[] CubeArray(int num){
     return array;
 }
 
-CubeArray(number);
+CubeArray(numberN);
