@@ -64,7 +64,7 @@ int SumOfNumber(int a)
    return sum;
 }
 
-// System.Console.WriteLine(SumOfNumber(number));
+System.Console.WriteLine(SumOfNumber(number));
 
 
 /*Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
