@@ -50,7 +50,7 @@ int ReadNumber(string arg)
     return i;
 }
 
-int number = ReadNumber("input");
+// int number = ReadNumber("input");
 
 int SumOfNumber(int a)
 {
@@ -64,4 +64,22 @@ int SumOfNumber(int a)
    return sum;
 }
 
-System.Console.WriteLine(SumOfNumber(number));
+// System.Console.WriteLine(SumOfNumber(number));
+
+
+/*Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+6, 1, 33 -> [6, 1, 33]*/
+
+int[] array = new int[8];
+
+void FillArray(int[] array){
+
+    for(int i = 0; i < array.Length; i++){
+        array[i] = new Random().Next(0,100);
+    }
+
+    System.Console.Write(string.Join(", ", array));
+}
+
+FillArray(array);
