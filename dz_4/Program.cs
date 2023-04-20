@@ -31,3 +31,37 @@ System.Console.WriteLine(PowAB(a,b));
 
 ___________________________________________________*/
 
+
+
+/*Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+452 -> 11
+82 -> 10
+9012 -> 12*/
+
+
+int ReadNumber(string arg)
+{
+    System.Console.WriteLine($"число {arg}");
+    int i;
+    while(!int.TryParse(System.Console.ReadLine(), out i))
+    {
+        System.Console.WriteLine("again");
+    }
+    return i;
+}
+
+int number = ReadNumber("input");
+
+int SumOfNumber(int a)
+{
+    string number_string = a.ToString();
+    int sum = 0;
+
+    for (int i = 0; i < number_string.Length; i++)
+    {
+        sum += int.Parse(number_string[i].ToString());
+    }
+   return sum;
+}
+
+System.Console.WriteLine(SumOfNumber(number));
