@@ -1,7 +1,7 @@
 ﻿/*Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
 3, 5 -> 243 (3⁵)
 2, 4 -> 16*/
-/*_____________________________________________________________
+
 int ReadInt(string arg)
 {
     System.Console.WriteLine($"число {arg}");
@@ -29,7 +29,7 @@ int PowAB(int a, int b)
 
 System.Console.WriteLine(PowAB(a,b));
 
-___________________________________________________*/
+
 
 
 
@@ -50,7 +50,7 @@ int ReadNumber(string arg)
     return i;
 }
 
-// int number = ReadNumber("input");
+int number = ReadNumber("input");
 
 int SumOfNumber(int a)
 {
