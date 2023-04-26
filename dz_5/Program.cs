@@ -136,3 +136,70 @@ int Summ()
 
 /*Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементами массива.
 [3,21 7,04 22,93 -2,71 78,24] -> 80,95*/
+
+
+//вводим размер массива
+int ReadInt_Task38(string a){ 
+    Console.Write($"input {a}: ");
+
+    int i;
+    while (! int.TryParse(System.Console.ReadLine(), out i)){
+        System.Console.WriteLine("not number");
+    };
+
+    return i;
+}
+
+//заолнить массив:
+void FillArray_Task38(double[] array)
+{
+    Random random = new Random();
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = Convert.ToDouble(random.Next(-1000, 1000)/100.0);
+    }
+}
+
+//массив элементов :
+double[] NewArrayEmpty_Task38()
+{
+    int size = ReadInt_Task38("size: ");
+    double[] array = new double[size];
+    FillArray_Task38(array);
+    return array;
+}
+
+//вывод массива: 
+void PrintArray_Task38(double[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        System.Console.Write($"{array[i]} ");
+    }
+    System.Console.WriteLine();
+} 
+
+//разница max и min:
+double Difference()
+{
+    double[] array = NewArrayEmpty_Task38();
+    double max = array[0];
+    double min = array[0];
+
+    for (int i = 1; i < array.Length; i++)
+    {
+        if(array[i] > max)
+        {
+            max = array[i];
+        }
+        if(array[i] < min)
+        {
+            min = array[i];
+        }
+    }
+    PrintArray_Task38(array);
+    double diff = max - min;
+    return diff;
+}
+
+// System.Console.WriteLine(Difference());
