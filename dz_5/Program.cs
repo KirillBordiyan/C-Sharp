@@ -60,7 +60,7 @@ int Count_Task34()
     return count;
 }
 
-// System.Console.WriteLine(Count_Task34());
+System.Console.WriteLine(Count_Task34());
 
 
 /*Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов с нечётными индексами.
@@ -126,7 +126,7 @@ int Summ()
     return sum;
 }
 
-// System.Console.WriteLine(Summ());
+System.Console.WriteLine(Summ());
 
 
 
@@ -202,4 +202,4 @@ double Difference()
     return diff;
 }
 
-// System.Console.WriteLine(Difference());
+System.Console.WriteLine(Difference());
