@@ -1,4 +1,4 @@
-﻿int ReadInt(string a){ //вводим размер массива
+﻿int ReadInt(string a){ 
     Console.Write($"input {a}: ");
 
     int i;
@@ -8,6 +8,7 @@
 
     return i;
 }
+
 
 int row = ReadInt("строки: ");
 int coloumn = ReadInt("столбцы: ");
@@ -39,13 +40,13 @@ double[,] CreateAndFillArray(int row, int coln)
         }
         System.Console.WriteLine();
     }
+    System.Console.WriteLine();
 
     return array;
 }
 
+CreateAndFillArray(row, coloumn);
 
-
-// CreateAndFillArray(row, coloumn);
 
 /*Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
 и возвращает значение этого элемента или же указание, что такого элемента нет.
@@ -85,7 +86,7 @@ void Print(int[,] array)
     {
         for (int j= 0; j < array.GetLength(1); j++)
         {
-            System.Console.Write(String.Format("{0,4}", array[i, j]));
+            System.Console.Write(String.Format("{0,6}", array[i, j]));
         }
         System.Console.WriteLine();
     } 
@@ -112,9 +113,38 @@ void ExistElement(int[,] array, int rowIndex, int clnIndex)
     }
 }
 
-
 int[,] array = CreatePrintArray(row, coloumn);
 int rowIndexToFind = ReadInt("искомая позиция по i: ");
 int clnIndexToFind = ReadInt("искомая позиция по j: ");
 
 ExistElement(array, rowIndexToFind, clnIndexToFind);
+
+
+
+/*
+Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+Например, задан массив:
+1 4 7 2
+5 9 2 3
+8 4 2 4
+Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3*/
+
+void Average(int[,] array)
+{
+
+    for (int j = 0; j < array.GetLength(1); j++)//
+    {
+        int sum = 0;
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            
+            sum = sum + array[i,j];
+        }
+        double avg = (double) sum / array.GetLength(0);
+        System.Console.Write(String.Format("{0,6}", Math.Round(avg, 2)));  
+    }
+    System.Console.WriteLine();
+}
+
+
+Average(array);
