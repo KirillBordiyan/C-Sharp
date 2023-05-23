@@ -33,9 +33,9 @@ void Print(int[,] array)
 
 
 
-int row = ReadInt("строки: ");
-int coloumn = ReadInt("столбцы: ");
-int[,] array = CreateAdnFillArray(row, coloumn);
+// int row = ReadInt("строки: ");
+// int coloumn = ReadInt("столбцы: ");
+// int[,] array = CreateAdnFillArray(row, coloumn);
 
 int[,] CreateAdnFillArray(int row, int coloumn)
 {
@@ -148,3 +148,54 @@ void SummaryByRow(int[] array) //выводит, какая строка дву�
 Результирующая матрица будет:
 18 20
 15 18*/
+
+int row1 = ReadInt("m1 row: ");
+int cln1 = ReadInt("m1 cln: ");
+
+int row2 = ReadInt("m2 row: ");
+int cln2 = ReadInt("m2 cln: ");
+
+int[,] matrix1 = CreateAdnFillArray(row1, cln1);
+int[,] matrix2 = CreateAdnFillArray(row2, cln2);
+
+
+bool WeCanMultiply(int[,] m1, int[,] m2) //можем ли умножить
+{
+    return m1.GetLength(0) == m2.GetLength(1);
+}
+
+int[,] Task58EmptyMatrix(int[,] m1, int[,] m2) //создаем пустой двумерный
+{
+    int newRow = m1.GetLength(0);
+    int newCln = m2.GetLength(1);
+    
+    int[,] array = new int[newRow, newCln];
+    return array;
+}
+
+
+int[,] MatrixProduct(int[,] m1, int[,] m2) //перемножаем
+{
+    int[,] array = Task58EmptyMatrix(m1, m2);
+    for (int i = 0; i < m1.GetLength(0); i++)
+    {
+        for (int j = 0; j < m2.GetLength(1); j++)
+        {
+            array[i,j] = 0;
+            for (int k = 0; k < m1.GetLength(1); k++)
+            {
+                array[i,j] += m1[i,k] * m2[k,j];
+            } 
+        }
+    }
+    return array;
+}
+
+if(WeCanMultiply(matrix1,matrix2))
+{
+    System.Console.WriteLine();
+    int[,] arr = MatrixProduct(matrix1, matrix2);
+    Print(arr);
+}
+
+
