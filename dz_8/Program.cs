@@ -149,14 +149,14 @@ void SummaryByRow(int[] array) //выводит, какая строка дву�
 18 20
 15 18*/
 
-int row1 = ReadInt("m1 row: ");
-int cln1 = ReadInt("m1 cln: ");
+// int row1 = ReadInt("m1 row: ");
+// int cln1 = ReadInt("m1 cln: ");
 
-int row2 = ReadInt("m2 row: ");
-int cln2 = ReadInt("m2 cln: ");
+// int row2 = ReadInt("m2 row: ");
+// int cln2 = ReadInt("m2 cln: ");
 
-int[,] matrix1 = CreateAdnFillArray(row1, cln1);
-int[,] matrix2 = CreateAdnFillArray(row2, cln2);
+// int[,] matrix1 = CreateAdnFillArray(row1, cln1);
+// int[,] matrix2 = CreateAdnFillArray(row2, cln2);
 
 
 bool WeCanMultiply(int[,] m1, int[,] m2) //можем ли умножить
@@ -191,12 +191,20 @@ int[,] MatrixProduct(int[,] m1, int[,] m2) //перемножаем
     return array;
 }
 
+/*
 if(WeCanMultiply(matrix1,matrix2))
 {
     System.Console.WriteLine();
     int[,] arr = MatrixProduct(matrix1, matrix2);
     Print(arr);
-}
+}*/
+
+
+
+
+
+
+
 
 /*Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
 Массив размером 2 x 2 x 2
@@ -204,3 +212,34 @@ if(WeCanMultiply(matrix1,matrix2))
 34(1,0,0) 41(1,1,0)
 27(0,0,1) 90(0,1,1)
 26(1,0,1) 55(1,1,1)*/
+
+// int x = ReadInt("x");
+// int y = ReadInt("y");
+// int z = ReadInt("z");
+// int[,,] array = new int[2, 2, 2]; //z - слой, x- срока, y- столбец
+
+int[,,] array = 
+{
+    {
+        {6, 8},
+        {1, 4}
+    },
+    {
+        {15, 9},
+        {5, 0}
+    }
+};
+
+
+for(int z = 0; z < array.GetLength(0); z++)
+{
+    for (int i = 0; i < array.GetLength(1); i++)
+    {
+        for (int j = 0; j < array.GetLength(2); j++)
+        {
+            System.Console.Write(String.Format("{0,10}", $"{array[z, i, j]} ({z}{i}{j})"));
+        }
+        System.Console.WriteLine();
+    }
+    System.Console.WriteLine();
+}
