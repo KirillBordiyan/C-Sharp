@@ -213,33 +213,75 @@ if(WeCanMultiply(matrix1,matrix2))
 27(0,0,1) 90(0,1,1)
 26(1,0,1) 55(1,1,1)*/
 
-// int x = ReadInt("x");
-// int y = ReadInt("y");
-// int z = ReadInt("z");
-// int[,,] array = new int[2, 2, 2]; //z - слой, x- срока, y- столбец
 
-int[,,] array = 
+
+
+int x = ReadInt("x строк "); //строка
+int y = ReadInt("y столбцов "); //столбец
+int z = ReadInt("z слоев "); //слоq
+int[,,] cubeArray = FillCubeArray(z,x,y);
+PrintCubeArray(cubeArray); //они случайны, но закономерны :) а про рандом всех матриц ничего не сказано
+
+//create
+int[,,] CreateCubeArray(int z, int x, int y)
+{  
+    int[,,] array = new int[0,0,0];
+    if(z > 1 && z*x*y <= 80) array = new int[z,x,y]; // от 10 до 99 чисел, -10 за рандом на первом; просто выставили границу положительных чисел
+    else System.Console.WriteLine("это будет двумерный массив, либо столько положительных двузначных нет ");
+    return array;
+}
+
+//fill
+int[,,] FillCubeArray(int z, int x, int y)
 {
+    int[,,] array = CreateCubeArray(z,x,y);
+    Random rnd = new Random();
+   
+    array[0,0,0] = rnd.Next(10,20);
+    for(int i = 0; i < array.GetLength(0)-1; i++)
     {
-        {6, 8},
-        {1, 4}
-    },
-    {
-        {15, 9},
-        {5, 0}
-    }
-};
-
-
-for(int z = 0; z < array.GetLength(0); z++)
-{
-    for (int i = 0; i < array.GetLength(1); i++)
-    {
-        for (int j = 0; j < array.GetLength(2); j++)
+        for(int j = 0; j < array.GetLength(1); j++)
         {
-            System.Console.Write(String.Format("{0,10}", $"{array[z, i, j]} ({z}{i}{j})"));
+            array[i,j,0] = array[i,0,0] + j;
+            for(int k = 0; k < array.GetLength(2); k++)
+            {
+                array[i,j,k] = array[i,j,0] + array.GetLength(1)*k;
+            }
+            array[i+1,0,0] = array[i,array.GetLength(1)-1, array.GetLength(2)-1] + 1;
+        }
+
+        if(i+1 == array.GetLength(0)-1)
+        {
+            for(i = array.GetLength(0)-1; i < array.GetLength(0); i++)
+            {
+                for(int j = 0; j < array.GetLength(1); j++)
+                {
+                    array[i,j,0] = array[i,0,0] + j;
+                    for(int k = 0; k < array.GetLength(2); k++)
+                    {
+                        array[i,j,k] = array[i,j,0] + array.GetLength(1)*k;
+                    }
+                }
+            }
+        }
+    }
+    return array;
+}
+    
+//print
+void PrintCubeArray(int[,,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            for (int k = 0; k < array.GetLength(2); k++)
+            {
+                System.Console.Write(String.Format("{0,12}", $"{array[i, j, k]} ({i}{j}{k})"));
+            }
+            System.Console.WriteLine();
         }
         System.Console.WriteLine();
     }
-    System.Console.WriteLine();
 }
+
