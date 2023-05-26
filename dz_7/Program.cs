@@ -104,7 +104,7 @@ void ExistElement(int[,] array, int rowIndex, int clnIndex)
         {
             for(int j = 0; j < array.GetLength(1); j++)
             {
-                if(i == rowIndex && j == clnIndex) 
+                if(i == rowIndex-1 && j == clnIndex-1) 
                 {
                     System.Console.WriteLine($"значение элемента с индексами {rowIndex}, {clnIndex} равно {array[i,j]}");
                 }

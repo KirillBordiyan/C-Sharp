@@ -15,7 +15,7 @@ void Print(int[,] array)
     {
         for (int j= 0; j < array.GetLength(1); j++)
         {
-            System.Console.Write(String.Format("{0,3}", array[i, j]));
+            System.Console.Write(String.Format("{0,15}", array[i, j]));
         }
         System.Console.WriteLine();
     } 
@@ -31,11 +31,9 @@ void Print(int[,] array)
 9 5 3 2
 8 4 4 2*/
 
-
-
-// int row = ReadInt("строки: ");
-// int coloumn = ReadInt("столбцы: ");
-// int[,] array = CreateAdnFillArray(row, coloumn);
+int row = ReadInt("строки: ");
+int coloumn = ReadInt("столбцы: ");
+int[,] array = CreateAdnFillArray(row, coloumn);
 
 int[,] CreateAdnFillArray(int row, int coloumn)
 {
@@ -72,10 +70,11 @@ void ArraySort(int[,] array)
             }       
         }
     }
+    System.Console.WriteLine("Task 54");
     Print(array);
 }
 
-// ArraySort(array);
+ArraySort(array);
 
 
 
@@ -88,8 +87,8 @@ void ArraySort(int[,] array)
 Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка*/
 
 
-// int[] arrayTask56 = CreateArraySum(array);
-// SummaryByRow(arrayTask56);
+int[] arrayTask56 = CreateArraySum(array);
+SummaryByRow(arrayTask56);
 
 bool IsNotSquare(int[,] array) //проверяет, является ли матрица квадратной
 {
@@ -136,7 +135,7 @@ void SummaryByRow(int[] array) //выводит, какая строка дву�
             min = i;
         }
     }
-    System.Console.WriteLine($"строка минимальной суммы -- {min+1}");
+    System.Console.WriteLine($"Task 56 строка минимальной суммы -- {min+1}");
 }
 
 
@@ -149,14 +148,15 @@ void SummaryByRow(int[] array) //выводит, какая строка дву�
 18 20
 15 18*/
 
-// int row1 = ReadInt("m1 row: ");
-// int cln1 = ReadInt("m1 cln: ");
+//вызов
+int row1 = ReadInt("Task 58 m1 row: ");
+int cln1 = ReadInt("Task 58 m1 cln: ");
 
-// int row2 = ReadInt("m2 row: ");
-// int cln2 = ReadInt("m2 cln: ");
+int row2 = ReadInt("Task 58 m2 row: ");
+int cln2 = ReadInt("Task 58 m2 cln: ");
 
-// int[,] matrix1 = CreateAdnFillArray(row1, cln1);
-// int[,] matrix2 = CreateAdnFillArray(row2, cln2);
+int[,] matrix1 = CreateAdnFillArray(row1, cln1);
+int[,] matrix2 = CreateAdnFillArray(row2, cln2);
 
 
 bool WeCanMultiply(int[,] m1, int[,] m2) //можем ли умножить
@@ -172,7 +172,6 @@ int[,] Task58EmptyMatrix(int[,] m1, int[,] m2) //создаем пустой д�
     int[,] array = new int[newRow, newCln];
     return array;
 }
-
 
 int[,] MatrixProduct(int[,] m1, int[,] m2) //перемножаем
 {
@@ -191,13 +190,13 @@ int[,] MatrixProduct(int[,] m1, int[,] m2) //перемножаем
     return array;
 }
 
-/*
+
 if(WeCanMultiply(matrix1,matrix2))
 {
     System.Console.WriteLine();
     int[,] arr = MatrixProduct(matrix1, matrix2);
     Print(arr);
-}*/
+}
 
 
 
@@ -213,14 +212,11 @@ if(WeCanMultiply(matrix1,matrix2))
 27(0,0,1) 90(0,1,1)
 26(1,0,1) 55(1,1,1)*/
 
-
-
-
-int x = ReadInt("x строк "); //строка
-int y = ReadInt("y столбцов "); //столбец
-int z = ReadInt("z слоев "); //слоq
+int x = ReadInt("Task 60 x строк  "); //строка
+int y = ReadInt("Task 60 y столбцов "); //столбец
+int z = ReadInt("Task 60 z слоев "); //слоq
 int[,,] cubeArray = FillCubeArray(z,x,y);
-PrintCubeArray(cubeArray); //они случайны, но закономерны :) а про рандом всех матриц ничего не сказано
+PrintCubeArray(cubeArray); //они не повторяются, но закономерны :) а про рандом всех матриц ничего не сказано 
 
 //create
 int[,,] CreateCubeArray(int z, int x, int y)
@@ -293,3 +289,65 @@ void PrintCubeArray(int[,,] array)
 12 13 14 05
 11 16 15 06
 10 09 08 07*/
+
+int sideSize = ReadInt("Task 62 размер квадратного массива");
+int[,] spiral = new int[sideSize, sideSize];
+
+int[,] SpirallFill(int[,] array)
+{
+    array[0,0] = 1;
+    int size = array.GetLength(0);
+    int n = 0;
+    while(n != size/2)
+    {
+        for(int i = n; i < size-n; i++) //верх слева-направо
+        {
+            if(n == 0)
+            {
+                for(int j = 1; j < size-n; j++)
+                {
+                    array[i,j] = array[i,j-1]+1;
+                }
+            }
+            else{
+                for (int j = n; j < size-n; j++)
+                {
+                    array[i,j] = array[i,j-1]+1;
+                }
+            }
+        }
+
+        for (int i = n + 1; i < size-n; i++) //правая граница сверху вниз
+        {
+            for (int j = size-n-1; j > n; j--)
+            {
+                array[i,j] = array[i-1,j]+1;
+            }
+        }
+
+        for(int i = size-n-1; i > n; i--) //низ справа-налево
+        {
+            for (int j = size-n-2; j >= n; j--)
+            {
+                array[i,j] = array[i,j+1]+1;
+            }
+        }
+
+        for (int i = size-n-2; i > n; i--) //левая граница снизу вверх
+        {
+            for (int j = n; j < size-n-1; j++)
+            {
+                array[i,j] = array[i+1,j]+1;
+            }
+        }
+
+    n++;
+    }
+
+    Print(array);
+            
+    return array;
+
+}
+
+SpirallFill(spiral);
