@@ -1,0 +1,15 @@
+E:\repositories\csharp_dz\dz_9\bin\Debug\net7.0\dz_9.exe
+E:\repositories\csharp_dz\dz_9\bin\Debug\net7.0\dz_9.deps.json
+E:\repositories\csharp_dz\dz_9\bin\Debug\net7.0\dz_9.runtimeconfig.json
+E:\repositories\csharp_dz\dz_9\bin\Debug\net7.0\dz_9.dll
+E:\repositories\csharp_dz\dz_9\bin\Debug\net7.0\dz_9.pdb
+E:\repositories\csharp_dz\dz_9\obj\Debug\net7.0\dz_9.csproj.AssemblyReference.cache
+E:\repositories\csharp_dz\dz_9\obj\Debug\net7.0\dz_9.GeneratedMSBuildEditorConfig.editorconfig
+E:\repositories\csharp_dz\dz_9\obj\Debug\net7.0\dz_9.AssemblyInfoInputs.cache
+E:\repositories\csharp_dz\dz_9\obj\Debug\net7.0\dz_9.AssemblyInfo.cs
+E:\repositories\csharp_dz\dz_9\obj\Debug\net7.0\dz_9.csproj.CoreCompileInputs.cache
+E:\repositories\csharp_dz\dz_9\obj\Debug\net7.0\dz_9.dll
+E:\repositories\csharp_dz\dz_9\obj\Debug\net7.0\refint\dz_9.dll
+E:\repositories\csharp_dz\dz_9\obj\Debug\net7.0\dz_9.pdb
+E:\repositories\csharp_dz\dz_9\obj\Debug\net7.0\dz_9.genruntimeconfig.cache
+E:\repositories\csharp_dz\dz_9\obj\Debug\net7.0\ref\dz_9.dll
