@@ -17,39 +17,34 @@ System.Console.WriteLine("m & n must be positive");
 M = 1; N = 5. -> "1, 2, 3, 4, 5"
 M = 4; N = 8. -> "4, 6, 7, 8"*/
 
-
-void NaturalBeetween() //использование чисел при подсчете, а не определения количества, т.е не учитывается 0
+/*----------------------------------------------------
+int IFNatural(string arg) //использование чисел при подсчете, а не определения количества, т.е не учитывается 0
 {
-    int m = ReadInputNumber("to Task 64 input M: ");
-    int n = ReadInputNumber("to Task 64 input N: ");
-    
-    while (m <= 0)
+    int a = ReadInputNumber($"input {arg}: ");
+    while (a <= 0)
     {
-        System.Console.WriteLine("M is negative or 0 is out");
-        m = ReadInputNumber("input M again: ");
+        System.Console.WriteLine("A is negative or 0 is out");
+        a = ReadInputNumber("input A again: ");
     }
-    while (n <= 0)
+
+    return a;
+}
+
+// int m = IFNatural("task 64 M: ");
+// int n = IFNatural("task 64 N: ");
+
+void NaturalBeetween(int m, int n)
+{
+    if (m<=n)
     {
-        System.Console.WriteLine("N is negative or 0 is out or n = 1");
-        n = ReadInputNumber("input N again: ");
-    }
-    
-    if (m > n)
-    {
-        System.Console.WriteLine("m>n");
-        System.Console.WriteLine("start again");
-    }
-    else
-    {
-        while(m <= n)
-        {
-            System.Console.Write($"{m} ");
-            m++;
-        }
+        System.Console.Write($"{m} ");
+        m++;
+        NaturalBeetween(m,n);
     }
 }
 
-// NaturalBeetween();
+// NaturalBeetween(m,n);
+----------------------------------------------------*/
 
 
 
@@ -59,29 +54,32 @@ void NaturalBeetween() //использование чисел при подсч
 M = 1; N = 15 -> 120
 M = 4; N = 8. -> 30*/
 
-int NaturalSum()
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------
+int task66_m = ReductionNumber("task 66 M:");
+int task66_n = ReductionNumber("task 66 N:");
+System.Console.WriteLine(NaturalSum(task66_m, task66_n));
+
+int ReductionNumber(string arg)
 {
-    int m = ReadInputNumber("task 66 M: ");
-    int n = ReadInputNumber("task 66 N: ");
-
-    if(m <= 0)
+    int a = ReadInputNumber($"{arg} ");
+    if(a <= 0)
     {
-        m = 1;
-    }
-    if(n <= 0)
-    {
-        n = 1;
+        a = 1;
     }
 
-    int sum = 0;
-    while(m <= n)
-    {
-        sum += m;
-        m++;
-    }
-    System.Console.WriteLine(sum);
-    return sum;
+    return a;
 }
 
-NaturalSum();
+int NaturalSum(int m, int n, int sum = 0)
+{
+    if(m <= n)
+    {
+        sum = m + NaturalSum(m+1, n, sum);
+    }
+    return sum;    
+}
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
+m = 2, n = 3 -> A(m,n) = 29*/
