@@ -17,7 +17,6 @@ System.Console.WriteLine("m & n must be positive");
 M = 1; N = 5. -> "1, 2, 3, 4, 5"
 M = 4; N = 8. -> "4, 6, 7, 8"*/
 
-/*----------------------------------------------------
 int IFNatural(string arg) //использование чисел при подсчете, а не определения количества, т.е не учитывается 0
 {
     int a = ReadInputNumber($"input {arg}: ");
@@ -44,7 +43,7 @@ void NaturalBeetween(int m, int n)
 }
 
 // NaturalBeetween(m,n);
-----------------------------------------------------*/
+
 
 
 
@@ -54,7 +53,7 @@ void NaturalBeetween(int m, int n)
 M = 1; N = 15 -> 120
 M = 4; N = 8. -> 30*/
 
-/*------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 int task66_m = ReductionNumber("task 66 M:");
 int task66_n = ReductionNumber("task 66 N:");
 System.Console.WriteLine(NaturalSum(task66_m, task66_n));
@@ -79,7 +78,40 @@ int NaturalSum(int m, int n, int sum = 0)
     return sum;    
 }
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
 
 /*Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
 m = 2, n = 3 -> A(m,n) = 29*/
+
+/*
+A(m,n)=
+{
+    m = 0: n+1;
+    m > 0, n=0: A(m-1, 1);
+    m>0, n > 0: A(m-1, A(m, n-1));
+}*/
+
+
+int task68_m = IFNatural("task 68 M: ");
+int task68_n = IFNatural("task 68 N: ");
+
+
+int Akkerman(int m, int n)
+{
+    if(m == 0)
+    {
+        return n+1;
+    }
+    else
+        if (m > 0 && n == 0) //тк натуральные числа - неотрицательные в последовательности, можно не испольховать проверку m != 0
+        {
+            return Akkerman(m-1, 1);
+        }
+        else
+        {
+            return Akkerman(m-1, Akkerman(m, n-1));
+        }
+}
+
+System.Console.WriteLine(Akkerman(task68_m, task68_n));
