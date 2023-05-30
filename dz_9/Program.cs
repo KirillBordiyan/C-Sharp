@@ -29,8 +29,8 @@ int IFNatural(string arg) //использование чисел при под�
     return a;
 }
 
-// int m = IFNatural("task 64 M: ");
-// int n = IFNatural("task 64 N: ");
+int m = IFNatural("task 64 M: ");
+int n = IFNatural("task 64 N: ");
 
 void NaturalBeetween(int m, int n)
 {
@@ -42,7 +42,7 @@ void NaturalBeetween(int m, int n)
     }
 }
 
-// NaturalBeetween(m,n);
+NaturalBeetween(m,n);
 
 
 
